@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta htpp-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SnowFall Prediction</title>
+    <link
+      herf="https://font.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lexend Deca"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <style>
+    body {
+      background-image: url('images/pexels-magda-ehlers-714482.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+    .info {
+      text-align: center;
+      width: 1000px;
+      font-size: x-large;
+      padding-top: 30px;
+      padding-left: 100px;
+      font-family: 'Lexend Deca', sans-serif;
+      color: powderblue;
+      height: auto;
+    }
+    /* .navbar-item , 
+.navbar-link{
+  color:aliceblue;
+} */
+  </style>
+
+  <nav class="navbar is-transparent" style="background: transparent">
+    <div class="navbar-brand">
+      <img
+        src="images/Screenshot 2022-11-26 161544.png"
+        width="50px"
+        height="20px"
+      />
+      <a class="navbar-item" href="#">
+        <!-- <img src="images/logo1.png" alt="Bulma: a modern CSS framework based on Flexbox" width="80" height="100"> -->
+
+        <h2 class="title"><b>SnowFall Prediction</b></h2>
+      </a>
+
+      <div class="navbar-burger" data-target="navbarExampleTransparentExample">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" style="color: aliceblue" href="OG.html">
+          Home
+        </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <!-- <a class="navbar-link" style="color: aliceblue" href="#"> Docs </a>
+          <div class="navbar-dropdown is-boxed">
+            <a class="navbar-item" href="modis.html"> Modis Results </a>
+            <a class="navbar-item" href="OG.html"> Original Data </a>
+            <a class="navbar-item" href="map_tutorial.html"> Prediction </a>
+            <hr class="navbar-divider" />
+            <a class="navbar-item" href="overview.html"> Overview </a>
+          </div> -->
+        </div>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link" style="color: aliceblue" href="#">
+              References
+            </a>
+            <div class="navbar-dropdown is-boxed">
+              <a
+                class="navbar-item"
+                href="https://www.esri.com/en-us/landing-page/product/2019/arcgis-online/overview?gclid=Cj0KCQiAj4ecBhD3ARIsAM4Q_jEtkmaAV5PkEplXUAYPmP8YsC-30AAcTZFS7h-JqtNv5G0NmIbdJOcaArFvEALw_wcB&adumkts=product&adupro=ArcGIS_Online&aduc=advertising&adum=ppc&aduSF=google&utm_Source=advertising&aduca=arcgis_online_promotions_demandgen&aduco=DPM_OLP_Brand_RSA&adut=DPM_PPCBrand_ArcGIS&aduat=contact_request&adupt=lead_gen&sf_id=7015x000000iS1fAAE&ef_id=Cj0KCQiAj4ecBhD3ARIsAM4Q_jEtkmaAV5PkEplXUAYPmP8YsC-30AAcTZFS7h-JqtNv5G0NmIbdJOcaArFvEALw_wcB:G:s&s_kwcid=AL!8948!3!616179855032!e!!g!!arcgis&_bk=arcgis&_bt=616179855032&_bm=e&_bn=g&_bg=101535483299&aducop=arcgis-e&gclsrc=aw.ds"
+              >
+                ArcGIS Map Online
+              </a>
+              <a
+                class="navbar-item"
+                href="https://www.kaggle.com/code/ircuscus/global-weather-monitoring-dashboard/data"
+              >
+                Datasets
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <h1 class="info">
+    <b
+      >" Comparative Analysis of the Historical Snowfall Patterns using Big Data
+      and ArcGIS"</b
+    >
+  </h1>
+  <br />
+  <p
+    style="
+      text-align: left;
+      padding-left: 50px;
+      padding-right: 100px;
+      color: beige;
+    "
+  >
+    <b>
+      Every year, snowfalls and snowstorms cost millions when it comes to loss
+      of life and property damage. This causes disruption and disturbance into
+      the functioning of the nation. Multiple accidents, blizzards are costly
+      for the same reason. In order to avoid this, we need to come with
+      preventive majors. One such thing which can help us is, analyzing the
+      weather data which is collected by the weather stations around the globe
+      on a regular basis. This data is present in enormous amounts but one such
+      drawback is that it is difficult to analyze and extract meaningful
+      information from it using the traditional data analysis techniques. We
+      strongly believe that using the modern visualization techniques we can
+      provide insights to take preventive measures/actions in order to tackle
+      climate change. Going ahead, we have provided a detailed breakdown of how
+      exactly we have come up with our solution and what different techniques/
+      methodologies we have used to do so.
+    </b>
+  </p>
+
+  <!-- <h2 class="info" style="text-align: right; padding-right: 30px">
+    <b>The Motivation</b>
+  </h2>
+  <br />
+  <p
+    style="
+      text-align: center;
+      padding-left: 400px;
+      padding-right: 10px;
+      color: beige;
+    "
+  ></p> -->
+</html>

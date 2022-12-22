@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+
+  <link
+    herf="https://font.googleapis.com/css?family=Poppins"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+  />
+  <!-- <link rel="stylesheet" href="css/style.css" /> -->
+
+  <title>SnowFall Prediction</title>
+
+  <style>
+    html,
+    body,
+    #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+    #timeSlider {
+      position: absolute;
+      left: 5%;
+      right: 5%;
+      bottom: 20px;
+    }
+    .title {
+      background: -webkit-linear-gradient(#ffcba7, #f96c85);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+  <nav class="navbar is-transparent" style="background: transparent">
+    <div class="navbar-brand">
+      <img
+        src="images/Screenshot 2022-11-26 161544.png"
+        width="50px"
+        height="20px"
+      />
+      <a class="navbar-item" href="#">
+        <!-- <img src="images/logo1.png" alt="Bulma: a modern CSS framework based on Flexbox" width="80" height="100"> -->
+
+        <h2 class="title">SnowFall Prediction</h2>
+      </a>
+
+      <div class="navbar-burger" data-target="navbarExampleTransparentExample">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="homepage.html"> Home </a>
+        <a class="navbar-item" href="prediction.html"> Prediction </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <!-- <a class="navbar-link" href="#"> Docs </a>
+          <div class="navbar-dropdown is-boxed">
+            <a class="navbar-item" href="modis.html"> Modis Results </a>
+            <a class="navbar-item" href="OG.html"> Original Data </a>
+            <a class="navbar-item" href="map_tutorial.html"> Prediction </a>
+            <hr class="navbar-divider" />
+            <a class="navbar-item" href="overview.html"> Overview </a>
+          </div> -->
+        </div>
+      </div>
+      <h1
+        class="navbar-item"
+        style="
+          font-size: 20px;
+          font-family: cursive;
+          padding-right: 48px;
+          background: transparent;
+        "
+      >
+        Displaying the SnowFall Timelamp for 2 years
+      </h1>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link" href="#"> References </a>
+            <div class="navbar-dropdown is-boxed">
+              <a
+                class="navbar-item"
+                href="https://www.esri.com/en-us/landing-page/product/2019/arcgis-online/overview?gclid=Cj0KCQiAj4ecBhD3ARIsAM4Q_jEtkmaAV5PkEplXUAYPmP8YsC-30AAcTZFS7h-JqtNv5G0NmIbdJOcaArFvEALw_wcB&adumkts=product&adupro=ArcGIS_Online&aduc=advertising&adum=ppc&aduSF=google&utm_Source=advertising&aduca=arcgis_online_promotions_demandgen&aduco=DPM_OLP_Brand_RSA&adut=DPM_PPCBrand_ArcGIS&aduat=contact_request&adupt=lead_gen&sf_id=7015x000000iS1fAAE&ef_id=Cj0KCQiAj4ecBhD3ARIsAM4Q_jEtkmaAV5PkEplXUAYPmP8YsC-30AAcTZFS7h-JqtNv5G0NmIbdJOcaArFvEALw_wcB:G:s&s_kwcid=AL!8948!3!616179855032!e!!g!!arcgis&_bk=arcgis&_bt=616179855032&_bm=e&_bn=g&_bg=101535483299&aducop=arcgis-e&gclsrc=aw.ds"
+              >
+                ArcGIS Map Online
+              </a>
+              <a
+                class="navbar-item"
+                href="https://ladsweb.modaps.eosdis.nasa.gov/search/order/1"
+              >
+                Datasets
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <link
+    rel="stylesheet"
+    href="https://js.arcgis.com/4.25/esri/themes/light/main.css"
+  />
+  <script src="https://js.arcgis.com/4.25/"></script>
+
+  <script>
+    require([
+      'esri/config',
+      //"esri/Map",
+
+      'esri/WebMap',
+      'esri/views/MapView',
+      'esri/widgets/ScaleBar',
+      'esri/widgets/Legend',
+      'esri/widgets/TimeSlider',
+    ], function (esriConfig, WebMap, MapView, ScaleBar, Legend, TimeSlider) {
+      esriConfig.apiKey =
+        'AAPKd273e620a74342b79edf72485726f7c26sJshnt4ejYe1sE6SGn9mdFRW6oamoaSNl9WfboXvspOZh9QTT5wlpYBeQEELMcA';
+      // esriConfig.apiKey = "AAPKded51e04852e4a99b70d21927dbd7628oCCtmkfSggC3EoCQVgiTa5426mCw7SnK4vykCGXENbGxJSbOjlvt0_o2ociHMaH7";
+      //esriConfig.portalUrl = "https://ucr.maps.arcgis.com/portal";
+
+      // where the map is called
+
+      const webmap = new WebMap({
+        portalItem: {
+          //id:"ac82a2a069c84a4ab63020b0e84aaf6f"
+          //id:"c65bd742c90f4597adc4150c1ebdfa7a"
+          // id: "e2de6a11d5ed4b3c9f726af7d6bf6144"
+          // id: "bfe58d182826424bb0a154c5a511935a"
+          //id: '8349f196c75b4d94bb4896142cd61fa2',
+          id:'63b7e3d087774a5ebbf8c9c8ac194d3c'
+        },
+      });
+      const view = new MapView({
+        map: webmap,
+        container: 'viewDiv',
+        zoom: 3,
+      });
+      const legend = new Legend({
+        view: view,
+      });
+      view.ui.add(legend, 'top-left');
+      // time slider widget initialization
+      TimeSlider.getPropertiesFromWebMap(webmap).then((timeSliderSettings) => {
+        const timeSlider = new TimeSlider({
+          ...timeSliderSettings,
+          view,
+          container: 'timeSlider',
+        });
+        const scaleBar = new ScaleBar({
+          view: view,
+          unit: 'dual', // The scale bar displays both metric and non-metric units.
+        });
+
+        // Add the widget to the bottom left corner of the view
+        view.ui.add(scaleBar, {
+          position: 'top-right',
+        });
+      });
+      //const { unit, value } = timeSlider.stops.interval;
+      //console.log(`The stop interval is every ${value} ${unit}.`);
+
+      // add the UI for a title
+      //view.ui.add("titleDiv", "top-right");
+    });
+
+    //view.ui.add(titleDiv, "top-left");
+  </script>
+</head>
+<body>
+  <div id="viewDiv"></div>
+  <div id="timeSlider"></div>
+</body>
